@@ -74,6 +74,7 @@ function Login() {
     }
 
     try {
+      
       setLoading(true);
 
       await api.post("/auth/signup", {
@@ -99,7 +100,7 @@ function Login() {
       setConfirmPassword("");
 
     } catch (error) {
-      const errors = error.response?.data?.errors;
+        const errors = error.response?.data?.errors;
 
       setError(
         errors?.join(", ") ||
@@ -158,7 +159,6 @@ function Login() {
           className="mt-6 space-y-4"
         >
 
-          {/* Name - Signup only */}
           {isSignup && (
             <div>
               <label className="block mb-1 font-medium">
@@ -181,7 +181,6 @@ function Login() {
             </div>
           )}
 
-          {/* Email */}
           <div>
             <label className="block mb-1 font-medium">
               Email
@@ -198,7 +197,6 @@ function Login() {
             />
           </div>
 
-          {/* Address - Signup only */}
           {isSignup && (
             <div>
               <label className="block mb-1 font-medium">
@@ -217,7 +215,6 @@ function Login() {
             </div>
           )}
 
-          {/* Password */}
           <div>
             <label className="block mb-1 font-medium">
               Password
@@ -240,7 +237,6 @@ function Login() {
             )}
           </div>
 
-          {/* Confirm Password - Signup only */}
           {isSignup && (
             <div>
               <label className="block mb-1 font-medium">
@@ -276,7 +272,6 @@ function Login() {
 
         </form>
 
-        {/* Switch Login / Signup */}
         <div className="text-center mt-6">
 
           <p className="text-gray-500">
